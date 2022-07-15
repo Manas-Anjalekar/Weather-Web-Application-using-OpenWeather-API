@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
+</head>
+
+<body class="bg-secondary">
+  <div class="container mt-5 bg-light p-5">
+    <h1>Current Weather</h1>
+    <form action="/" method="post">
+      <div class="mb-3">
+        <label class="form-label" for="cityInput">City Name: </label>
+        <input class="form-control" id="cityInput" type="text" name="cityName">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Please select the metric: </label>
+        <div class="form-check">
+          <input class="form-check-input" id="unitInput1" type="radio" name="metricValue" value="metric">
+          <label class="form-check-label" for="unitInput1">Metric</label>
+          <div id="radioButtonHelp" class="form-text">This corresponds to Celsius System.</div>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" id="unitInput2" type="radio" name="metricValue" value="imperial">
+          <label class="form-check-label" for="unitInput2">Imperial</label>
+          <div id="radioButtonHelp" class="form-text">This corresponds to Fahrenheit System.</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Get Current Weather</button>
+    </form>
+  </div>
+
+  <div class="container mt-3 bg-light p-5">
+    <h1>Current Weather Conditions</h1>
+    <div class="ps-3 ms-3 pt-3">
+      <p>The current Temperature in <%=city%> is: <em><strong><%=temp%></strong></em> degrees unit</p>
+      <p>The weather is currently <em><strong><%=weatherDesciption%></em></strong></p><br />
+      <br /><img class="rounded-5 border border-primary bg-secondary w-25" src='<%= imageURL%>' >
+    </div>
+  </div>
+</body>
+
+</html>
